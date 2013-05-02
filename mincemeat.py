@@ -36,6 +36,7 @@ import random
 import socket
 import sys
 import types
+import stopwords
 
 VERSION = "0.1.2"
 
