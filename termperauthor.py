@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import mincemeat
 import glob
+import pprint
 
 text_files = glob.glob('hw3data/*')
 
@@ -36,7 +37,7 @@ def mapfn(k, v):
             print
             print "word: "+w
 
-            if w not in stopwords.allStopWords.keys():
+            if len(w)>1 and w not in stopwords.allStopWords.keys():
                 for author in authors:
                     if author not in authors_in_doc.keys():
                         print "author: "+author
@@ -79,4 +80,5 @@ s.mapfn = mapfn
 s.reducefn = reducefn
 
 results = s.run_server(password="changeme")
-print results
+pprint.pprint(results)
+
