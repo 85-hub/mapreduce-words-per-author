@@ -10,6 +10,9 @@ Written in python using the map-reduce lightweight implementation [mincemeat.py]
 
 This is an exercise proposed in the [Web Intelligence and Big Data course in Coursera.org](https://class.coursera.org/bigdata-002/class/index)
 
+This is the first time I write something in Python so ignore the quality of my code.
+The important thing is the actual logic behind map-reduce.
+
 
 Problem description
 -------------------
@@ -34,3 +37,9 @@ Remember that an author might have written multiple papers, which might be liste
 
 The assignment is to write a parallel map-reduce program for the above task using either octo.py, or mincemeat.py, each of which is a lightweight map-reduce implementation written in Python.
 
+Map-Reduce comments
+-------------------
+
+The main functions in the program are:
+* mapfn: This one reads all documents, combines information about authors in a given file. So the output is authors with partial count of words per file.
+* reducefn: This one gets the output from the previous function. Gets all partial counts for all documents for a given author and computes them.
